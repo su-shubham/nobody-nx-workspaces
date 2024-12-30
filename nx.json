@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "master",
-  "nxCloudId": "${process.env.NX_CLOUD_ID}",
+  "nxCloudId": "6772a86fd2d279433bd5d514",
   "targetDefaults": {
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^default"]
-    },
+    "@nx/vite:test": { "cache": true, "inputs": ["default", "^default"] },
     "@nx/eslint:lint": {
       "cache": true,
       "inputs": [
