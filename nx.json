@@ -1,9 +1,15 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "master",
-  "nxCloudId": "6772a86fd2d279433bd5d514",
+  "nxCloudId": "${process.env.NX_CLOUD_ID}",
   "targetDefaults": {
-    "@nx/vite:test": { "cache": true, "inputs": ["default", "^default"] },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default"
+      ]
+    },
     "@nx/eslint:lint": {
       "cache": true,
       "inputs": [
@@ -15,7 +21,11 @@
     }
   },
   "namedInputs": {
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/build-flow.yml"],
-    "default": ["sharedGlobals"]
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/build-flow.yml"
+    ],
+    "default": [
+      "sharedGlobals"
+    ]
   }
 }
