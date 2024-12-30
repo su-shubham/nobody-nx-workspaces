@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-      NX_CLOUD_ID: ${{ secrets.NX_CLOUD_ID }}
+      NX_CLOUD_ID: 6772a5535ad9512e8f5c7e0e
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,7 +32,7 @@ jobs:
         run: pnpm dlx nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
         env:
           NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-          NX_CLOUD_ID: ${{ secrets.NX_CLOUD_ID }}
+          NX_CLOUD_ID: 6772a5535ad9512e8f5c7e0e
 
       # Cache node_modules
       - uses: actions/setup-node@v4
