@@ -16,6 +16,8 @@ jobs:
     env:
       NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
       NX_CLOUD_ID: 6772a5535ad9512e8f5c7e0e
+      NX_BRANCH: ${{ github.event.number || github.ref_name }}
+      NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,4 +48,10 @@ jobs:
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: pnpm exec nx-cloud record -- echo Hello World
       # Nx Affected runs only tasks affected by the changes in this PR/commit. Learn more: https://nx.dev/ci/features/affected
-      - run: pnpm exec nx affected -t lint test build
+      - name: Run affected targets
+        run: |
+          pnpm exec nx reset
+          pnpm exec nx affected -t lint test build --parallel=3 || exit 1
+        env:
+          NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
+          NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
