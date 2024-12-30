@@ -3,6 +3,11 @@
   "defaultBase": "main",
   "nxCloudId": "6772a5535ad9512e8f5c7e0e",
   "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
     "@nx/vite:test": {
       "cache": true,
       "inputs": [
@@ -21,6 +26,12 @@
     }
   },
   "namedInputs": {
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json"
+    ],
     "sharedGlobals": [
       "{workspaceRoot}/.github/workflows/build-flow.yml"
     ],
