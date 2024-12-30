@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "main",
-  "nxCloudId": "${process.env.NX_CLOUD_ID}",
+  "nxCloudId": "6772a5535ad9512e8f5c7e0e",
   "targetDefaults": {
     "@nx/vite:test": {
       "cache": true,
