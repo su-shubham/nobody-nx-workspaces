@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Nx specific files
+dist/
+tmp/
+.cache/
+nx-report.html
+
+# Nx cache and cloud information
+.nx/
+.nx/*/
+.nx/artifacts/
+.nx/teams/
+
+.nx/cache/
+.nx/installation/
+.nx/cloud/
+.nx/daemon/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
