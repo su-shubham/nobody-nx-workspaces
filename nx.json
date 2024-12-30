@@ -16,5 +16,9 @@
         "{workspaceRoot}/eslint.config.js"
       ]
     }
+  },
+  "namedInputs": {
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/build-flow.yml"],
+    "default": ["sharedGlobals"]
   }
 }
